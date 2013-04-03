@@ -31,10 +31,20 @@ namespace roman
         }
         
         [TestCase(11, "XI")]
+        [TestCase(22, "XXII")]
+        [TestCase(32, "XXXII")]
+        [TestCase(42, "XLII")]
+        [TestCase(55, "LV")]
+        [TestCase(64, "LXIV")]
+        [TestCase(71, "LXXI")]
+        [TestCase(82, "LXXXII")]
+        [TestCase(92, "XCII")]
         public void Should_handle_numbers_below_100(int number, string expected)
         {
             RomanNumbers.ToRoman(number).ShouldEqual(expected);
         }
+
+       
         
         
     }

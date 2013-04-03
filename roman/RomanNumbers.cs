@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,28 +19,31 @@ namespace roman
                 {1000, "M"},
             };
 
-        private static Dictionary<int, string> _lookup2 = new Dictionary<int, string>
+        private static Dictionary<int, string[]> _lookup2 = new Dictionary<int, string[]>
             {
-                {1, "I"},
-                {2, "II"},
-                {3, "III"},
-                {4, "IV"},
-                {5, "V"},
-                {6, "VI"},
-                {7, "VII"},
-                {8, "VIII"},
-                {9, "IX"},
-                {10, "X"},
+                {0, new [] {"", ""}},
+                {1, new [] {"I", "X"}},
+                {2, new [] {"II", "XX"}},
+                {3, new [] {"III", "XXX"}},
+                {4, new [] {"IV", "XL"}},
+                {5, new [] {"V", "L"}},
+                {6, new [] {"VI", "LX"}},
+                {7, new [] {"VII", "LXX"}},
+                {8, new [] {"VIII", "LXXX"}},
+                {9, new [] {"IX", "XC"}},
             };
 
         public static string ToRoman(int number)
         {
             if (_lookup.ContainsKey(number))
                 return _lookup[number];
-            if (_lookup2.ContainsKey(number))
-                return _lookup2[number];
 
-            return "";
+            var roman = "";
+            roman += _lookup2[number/10][1]; //100
+
+            roman += _lookup2[number%10][0]; //10
+
+            return roman;
         }
     }
 }
