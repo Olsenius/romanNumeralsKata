@@ -21,16 +21,16 @@ namespace roman
 
         private static Dictionary<int, string[]> _lookup2 = new Dictionary<int, string[]>
             {
-                {0, new [] {"", ""}},
-                {1, new [] {"I", "X"}},
-                {2, new [] {"II", "XX"}},
-                {3, new [] {"III", "XXX"}},
-                {4, new [] {"IV", "XL"}},
-                {5, new [] {"V", "L"}},
-                {6, new [] {"VI", "LX"}},
-                {7, new [] {"VII", "LXX"}},
-                {8, new [] {"VIII", "LXXX"}},
-                {9, new [] {"IX", "XC"}},
+                {0, new [] {"", "", ""}},
+                {1, new [] {"I", "X", "C"}},
+                {2, new [] {"II", "XX", "CC"}},
+                {3, new [] {"III", "XXX", "CCC"}},
+                {4, new [] {"IV", "XL", "CD"}},
+                {5, new [] {"V", "L", "D"}},
+                {6, new [] {"VI", "LX", "DC"}},
+                {7, new [] {"VII", "LXX", "DCC"}},
+                {8, new [] {"VIII", "LXXX", "DCCC"}},
+                {9, new [] {"IX", "XC", "CM"}},
             };
 
         public static string ToRoman(int number)
@@ -39,7 +39,10 @@ namespace roman
                 return _lookup[number];
 
             var roman = "";
-            roman += _lookup2[number/10][1]; //100
+
+            roman += _lookup2[number/100][2]; //1000
+
+            roman += _lookup2[number/10%10][1]; //100
 
             roman += _lookup2[number%10][0]; //10
 

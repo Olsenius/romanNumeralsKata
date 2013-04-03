@@ -44,7 +44,13 @@ namespace roman
             RomanNumbers.ToRoman(number).ShouldEqual(expected);
         }
 
-       
+        [TestCase(111, "CXI")]
+        [TestCase(222, "CCXXII")]
+        [TestCase(333, "CCCXXXIII")]
+        public void Should_handle_numbers_below_1000(int number, string expected)
+        {
+            RomanNumbers.ToRoman(number).ShouldEqual(expected);
+        }
         
         
     }
