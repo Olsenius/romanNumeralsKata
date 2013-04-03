@@ -51,8 +51,14 @@ namespace roman
         {
             RomanNumbers.ToRoman(number).ShouldEqual(expected);
         }
-        
-        
-    }
 
+        [TestCase(1111, "MCXI")]
+        [TestCase(2222, "MMCCXXII")]
+        [TestCase(2013, "MMXIII")]
+        [TestCase(3999, "MMMCMXCIX")]
+        public void Should_handle_numbers_below_3999(int number, string expected)
+        {
+            RomanNumbers.ToRoman(number).ShouldEqual(expected);
+        }   
+    }
 }
