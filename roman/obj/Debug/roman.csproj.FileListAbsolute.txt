@@ -1,0 +1,5 @@
+C:\dev\roman\roman\bin\Debug\roman.dll
+C:\dev\roman\roman\bin\Debug\roman.pdb
+C:\dev\roman\roman\obj\Debug\roman.csprojResolveAssemblyReference.cache
+C:\dev\roman\roman\obj\Debug\roman.dll
+C:\dev\roman\roman\obj\Debug\roman.pdb
