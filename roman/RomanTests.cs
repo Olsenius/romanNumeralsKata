@@ -17,7 +17,7 @@ namespace roman
         {
             RomanNumbers.ToRoman(number).ShouldEqual(expected);
         }
-        
+
         [TestCase(2, "II")]
         [TestCase(3, "III")]
         [TestCase(4, "IV")]
@@ -29,7 +29,7 @@ namespace roman
         {
             RomanNumbers.ToRoman(number).ShouldEqual(expected);
         }
-        
+
         [TestCase(11, "XI")]
         [TestCase(22, "XXII")]
         [TestCase(32, "XXXII")]
@@ -59,6 +59,21 @@ namespace roman
         public void Should_handle_numbers_below_3999(int number, string expected)
         {
             RomanNumbers.ToRoman(number).ShouldEqual(expected);
-        }   
+        }
+
+        [TestCase("I", 1)]
+        [TestCase("II", 2)]
+        public void should_parse_roman_numbers_below_10(string roman, int expected)
+        {
+            RomanNumbers.ToDecimal(roman).ShouldEqual(expected);
+        }
+
+        [TestCase("XI", 11)]
+        [TestCase("XXII", 22)]
+        [TestCase("MMMCMXCIX", 3999)]
+        public void should_parse_roman_numbers_below_100(string roman, int expected)
+        {
+            RomanNumbers.ToDecimal(roman).ShouldEqual(expected);
+        }
     }
 }
