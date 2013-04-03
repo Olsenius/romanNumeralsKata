@@ -3,3 +3,6 @@ C:\dev\roman\roman\bin\Debug\roman.pdb
 C:\dev\roman\roman\obj\Debug\roman.csprojResolveAssemblyReference.cache
 C:\dev\roman\roman\obj\Debug\roman.dll
 C:\dev\roman\roman\obj\Debug\roman.pdb
+C:\dev\roman\roman\bin\Debug\nunit.framework.dll
+C:\dev\roman\roman\bin\Debug\Should.dll
+C:\dev\roman\roman\bin\Debug\nunit.framework.xml
